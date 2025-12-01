@@ -1,0 +1,40 @@
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.products-count {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.loading-container {
+  text-align: center;
+  padding: 3rem;
+}
+
+.loading-container p {
+  margin-top: 1rem;
+  color: #666;
+}
+
+.error-container {
+  text-align: center;
+  padding: 2rem;
+  background: #fee;
+  border: 1px solid #fcc;
+  color: #c33;
+  border-radius: 4px;
+}
+
+.no-results {
+  text-align: center;
+  color: #666;
+  padding: 2rem;
+}

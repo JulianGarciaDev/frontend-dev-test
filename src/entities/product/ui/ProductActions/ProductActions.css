@@ -1,0 +1,49 @@
+.product-actions {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1.5rem;
+}
+
+.product-actions h2 {
+  margin: 0 0 1rem 0;
+}
+
+.product-actions__options {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.product-actions__option {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.product-actions__option label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.product-actions__option select {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.product-actions__option select:focus {
+  outline: none;
+  border-color: #333;
+}
+
+.product-actions__no-options {
+  text-align: center;
+  color: #666;
+  padding: 1rem;
+  background: #f8f8f8;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+

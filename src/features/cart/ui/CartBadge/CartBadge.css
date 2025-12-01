@@ -1,0 +1,15 @@
+.cart-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cart-badge__count {
+  background: #e74c3c;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  min-width: 18px;
+  text-align: center;
+}
