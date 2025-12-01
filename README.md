@@ -54,14 +54,14 @@ La aplicación consume el API de prueba:
 
 ## Tecnologías utilizadas
 
-- **React 18** - Librería UI
+- **React 19** - Librería UI
 - **React Router DOM** - Enrutamiento
 - **Vite** - Build tool y dev server
 - **CSS** - Estilos por componente
 - **Context API** - Gestión de estado global
 - **Feature-Sliced Design** - Arquitectura
 
-## Organización del Código
+## Decisiones de arquitectura
 
 ### Capas (de más específica a más general):
 
@@ -87,6 +87,16 @@ La aplicación consume el API de prueba:
    - `api` - Cliente HTTP y sistema de caché
    - `ui` - Componentes base
 
+### React Router (Component-based)
+
+Se optó por usar el router tradicional con hooks (`useParams`, `useNavigate`) en lugar del nuevo Data Router por:
+
+- **Simplicidad:** Solo 2 rutas, no justifica la complejidad de loaders
+- **Cohesión:** Los hooks de fetching (`useProducts`, `useProduct`) viven cerca de los componentes
+- **Caché personalizado:** El sistema de localStorage se integra naturalmente con hooks
+
+**Nota:** Para aplicaciones más grandes con SSR o streaming, el Data Router sería la opción recomendada.
+
 ### Path Aliases
 
 El proyecto usa path aliases (`@/`) configurados en `vite.config.js`.
@@ -98,7 +108,7 @@ El proyecto usa path aliases (`@/`) configurados en `vite.config.js`.
 El endpoint `POST /cart` del API siempre devuelve `{ count: 1 }` independientemente del número total de productos en el carrito. 
 
 **Comportamiento esperado:**
-```json
+```
 // Primera vez
 POST /cart → { "count": 1 }
 
@@ -107,7 +117,7 @@ POST /cart → { "count": 2 }
 ```
 
 **Comportamiento actual:**
-```json
+```
 // Siempre devuelve 1
 POST /cart → { "count": 1 }
 POST /cart → { "count": 1 }
