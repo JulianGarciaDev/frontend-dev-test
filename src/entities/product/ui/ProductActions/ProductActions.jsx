@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { AddToCart } from "@/features/cart";
+import { isPriceAvailable } from "@/shared/lib/formatPrice";
 import "./ProductActions.css";
 
 export function ProductActions({ product }) {
+  const priceIsAvailable = isPriceAvailable(product.price);
+
   const hasColors = product?.options?.colors?.length > 0;
   const hasStorages = product?.options?.storages?.length > 0;
 
@@ -61,11 +64,21 @@ export function ProductActions({ product }) {
         <p className="product-actions__no-options">Sin opciones de configuración</p>
       )}
 
-      <AddToCart 
-        product={product} 
-        colorCode={color?.code || 0} 
-        storageCode={storage?.code || 0}
-      />
+      {priceIsAvailable ? (
+        <AddToCart 
+          product={product} 
+          colorCode={color?.code || 0} 
+          storageCode={storage?.code || 0}
+        />
+      ) : (
+        <button 
+          className="product-actions__unavailable"
+          disabled
+          title="Este producto no tiene precio disponible"
+        >
+          Precio no disponible
+        </button>
+      )}
     </div>
   );
 }

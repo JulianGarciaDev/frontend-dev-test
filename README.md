@@ -140,6 +140,7 @@ Esta solución funciona correctamente para el propósito de la aplicación, aunq
 
 - **Ordenamiento** de los productos por precio, marca, modelo, etc.
 - **Paginación** o scroll infinito en listado
+- **Filtros** por marca, precio, especificaciones...
 - **TanStack Query** para gestión de estado servidor y caché
 - **Breadcrumbs más detallados** (categoría → marca → producto)
 - **Modo oscuro**
@@ -148,11 +149,10 @@ Esta solución funciona correctamente para el propósito de la aplicación, aunq
 - **i18n** multi-idioma (español, inglés, etc.)
 - **Formateo de monedas** según región
 - **Captura de errores HTTP y respuestas vacías** al llamar a la API externa: reintentos, mensajes para el usuario, etc.
-- **No añadir al carrito** productos sin precio
 
 ## Testing faltante
 
-- **Unit test**
+- **Unit test**: falta cobertura
 - **Component test**
 - **API test**
 - **End-to-end test**
