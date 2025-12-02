@@ -11,8 +11,9 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage",
-    "test:unit": "vitest run src/**/*.test.{js,jsx}",
-    "test:integration": "vitest run src/**/*.integration.test.{js,jsx}",
+    "test:unit": "vitest run unit.test",
+    "test:integration": "vitest run integration.test",
+    "test:watch": "vitest --reporter=verbose",
     "lint": "eslint src/**/*.{js,jsx}"
   },
   "dependencies": {

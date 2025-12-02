@@ -147,6 +147,8 @@ Esta solución funciona correctamente para el propósito de la aplicación, aunq
 - **Contraste de colores** WCAG AA compliant
 - **i18n** multi-idioma (español, inglés, etc.)
 - **Formateo de monedas** según región
+- **Captura de errores HTTP y respuestas vacías** al llamar a la API externa: reintentos, mensajes para el usuario, etc.
+- **No añadir al carrito** productos sin precio
 
 ## Testing faltante
 

@@ -1,3 +1,4 @@
+import { formatPrice, isPriceAvailable } from '@/shared/lib/formatPrice';
 import "./ProductDetails.css";
 
 export function ProductDetails({ product }) {
@@ -6,7 +7,11 @@ export function ProductDetails({ product }) {
       <div className="product-details__header">
         <span className="product-details__brand">{product.brand}</span>
         <h1 className="product-details__title">{product.model}</h1>
-        <p className="product-details__price">{product.price}€</p>
+        <p 
+          className={`product-details__price ${!isPriceAvailable(product.price) ? 'product-details__price--unavailable' : ''}`}
+        >
+          {formatPrice(product.price)}
+        </p>
       </div>
 
       {product.description && (

@@ -68,3 +68,10 @@
   color: #2196f3;
   margin: 0;
 }
+
+.product-card__price--unavailable {
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: #999;
+  font-style: italic;
+}

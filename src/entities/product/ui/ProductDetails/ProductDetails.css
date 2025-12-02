@@ -25,6 +25,13 @@
   margin: 0;
 }
 
+.product-details__price--unavailable {
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: #999;
+  font-style: italic;
+}
+
 .product-details__description {
   margin: 1rem 0;
   padding: 1rem 0;
