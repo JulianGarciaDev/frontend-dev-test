@@ -149,11 +149,25 @@ Esta solución funciona correctamente para el propósito de la aplicación, aunq
 - **i18n** multi-idioma (español, inglés, etc.)
 - **Formateo de monedas** según región
 - **Captura de errores HTTP y respuestas vacías** al llamar a la API externa: reintentos, mensajes para el usuario, etc.
+- **Error boundaries** en React para errores de rendering
+- **Logging estructurado** para debugging
 
-## Testing faltante
+## Testing pendiente
 
-- **Unit test**: falta cobertura
-- **Component test**
-- **API test**
-- **End-to-end test**
-- **Accessibility test**
+#### Unit Test importantes
+- `useSearch.js` - Hook de búsqueda con debounce
+- `CartProvider.jsx` - Lógica del carrito y localStorage
+- `useCart.js` - Hook de consumo del contexto
+
+#### Component Test importantes
+- `ProductActions.component.test.jsx` - Selectores + AddToCart + validación de precio
+- `SearchBar.component.test.jsx` - Input + useSearch con debounce real
+- `Header.component.test.jsx` - CartBadge + Breadcrumbs + navegación
+
+#### End-to-End Tests importantes
+- Flujo completo: Home → Buscar → Ver detalle → Añadir al carrito
+- Navegación: Logo, breadcrumbs, back/forward del navegador
+- Persistencia: Carrito sobrevive a refresh de página
+- Búsqueda: Filtrado en tiempo real
+- Validación: Producto sin precio no permite añadir al carrito
+- Errores: API fallida muestra mensaje al usuario
