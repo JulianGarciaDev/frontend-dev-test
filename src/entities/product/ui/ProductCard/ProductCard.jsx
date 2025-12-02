@@ -1,16 +1,11 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./ProductCard.css";
 
 export function ProductCard({ product }) {
-  const navigate = useNavigate();
-
   return (
-    <article 
+    <Link 
+      to={`/product/${product.id}`}
       className="product-card"
-      onClick={() => navigate(`/product/${product.id}`)}
-      role="button"
-      tabIndex={0}
-      onKeyDown={(e) => e.key === 'Enter' && navigate(`/product/${product.id}`)}
     >
       <div className="product-card__image">
         <img 
@@ -25,6 +20,6 @@ export function ProductCard({ product }) {
         <p className="product-card__model">{product.model}</p>
         <p className="product-card__price">{product.price}€</p>
       </div>
-    </article>
+    </Link>
   );
 }

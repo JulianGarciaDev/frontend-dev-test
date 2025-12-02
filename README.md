@@ -34,7 +34,8 @@ npm run start
 
 - `npm run start` - Inicia el servidor de desarrollo
 - `npm run build` - Genera la build de producción
-- `npm run test` - Lanzamiento de test
+- `npm run test` - Ejecuta los tests con Vitest
+- `npm run test:ui` - Tests con interfaz visual
 - `npm run lint` - Comprobación de código
 
 ## API
@@ -89,11 +90,12 @@ La aplicación consume el API de prueba:
 
 ### React Router (Component-based)
 
-Se optó por usar el router tradicional con hooks (`useParams`, `useNavigate`) en lugar del nuevo Data Router por:
+Se optó por usar el router tradicional con `<Link>` y hooks (`useParams`) en lugar del nuevo Data Router por:
 
 - **Simplicidad:** Solo 2 rutas, no justifica la complejidad de loaders
 - **Cohesión:** Los hooks de fetching (`useProducts`, `useProduct`) viven cerca de los componentes
 - **Caché personalizado:** El sistema de localStorage se integra naturalmente con hooks
+- **Navegación declarativa:** Uso de `<Link to="/">` en vez de navegación imperativa
 
 **Nota:** Para aplicaciones más grandes con SSR o streaming, el Data Router sería la opción recomendada.
 
@@ -139,7 +141,7 @@ Esta solución funciona correctamente para el propósito de la aplicación, aunq
 - **Ordenamiento** de los productos por precio, marca, modelo, etc.
 - **Paginación** o scroll infinito en listado
 - **TanStack Query** para gestión de estado servidor y caché
-- **Breadcrumbs más detallados** (categoría → subcategoría → producto)
+- **Breadcrumbs más detallados** (categoría → marca → producto)
 - **Modo oscuro**
 - **Textos alternativos** descriptivos en imágenes
 - **Contraste de colores** WCAG AA compliant
@@ -149,7 +151,6 @@ Esta solución funciona correctamente para el propósito de la aplicación, aunq
 ## Testing faltante
 
 - **Unit test**
-- **Integration test**
 - **Component test**
 - **API test**
 - **End-to-end test**
