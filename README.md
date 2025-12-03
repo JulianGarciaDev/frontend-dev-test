@@ -53,6 +53,15 @@ La aplicación consume el API de prueba:
 - **Duración:** 1 hora
 - **Beneficios:** Reduce peticiones al servidor y mejora rendimiento
 
+## Sistema de Reintentos
+
+Las peticiones a la API externa incluyen reintentos automáticos para mejorar la resiliencia:
+
+- **Códigos que se reintentan:** 408, 429, 500, 502, 503, 504
+- **Intentos:** 3 (1 inicial + 2 reintentos)
+- **Backoff exponencial:** 1s → 2s → 4s entre intentos
+- **Configurable:** Por petición si es necesario
+
 ## Tecnologías utilizadas
 
 - **React 19** - Librería UI
@@ -148,7 +157,7 @@ Esta solución funciona correctamente para el propósito de la aplicación, aunq
 - **Contraste de colores** WCAG AA compliant
 - **i18n** multi-idioma (español, inglés, etc.)
 - **Formateo de monedas** según región
-- **Captura de errores HTTP y respuestas vacías** al llamar a la API externa: reintentos, mensajes para el usuario, etc.
+- **Capturar respuestas vacías** al solicitar productos: reintentos, fallback, mensajes para el usuario, etc.
 - **Error boundaries** en React para errores de rendering
 - **Logging estructurado** para debugging
 
@@ -169,5 +178,3 @@ Esta solución funciona correctamente para el propósito de la aplicación, aunq
 - Navegación: Logo, breadcrumbs, back/forward del navegador
 - Persistencia: Carrito sobrevive a refresh de página
 - Búsqueda: Filtrado en tiempo real
-- Validación: Producto sin precio no permite añadir al carrito
-- Errores: API fallida muestra mensaje al usuario
