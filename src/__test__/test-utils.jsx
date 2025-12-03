@@ -19,17 +19,6 @@ export function renderWithRouter(ui, { route = '/', ...options } = {}) {
   };
 }
 
-export async function waitForLoadingToFinish() {
-  const { waitFor } = await import('@testing-library/react');
-  await waitFor(
-    () => {
-      const spinners = document.querySelectorAll('.spinner');
-      expect(spinners).toHaveLength(0);
-    },
-    { timeout: 3000 }
-  );
-}
-
 export function expectLoading(screen, message = /cargando/i) {
   expect(screen.getByText(message)).toBeInTheDocument();
   const spinner = document.querySelector('.spinner');
@@ -108,13 +97,6 @@ export const mockProducts = [
     },
   },
 ];
-
-export const mockProductApi = {
-  getAll: vi.fn().mockResolvedValue(mockProducts),
-  getById: vi.fn((id) => 
-    Promise.resolve(mockProducts.find(p => p.id === id) || null)
-  ),
-};
 
 export function setupCartMock() {
   globalThis.fetch = vi.fn((url, options) => {

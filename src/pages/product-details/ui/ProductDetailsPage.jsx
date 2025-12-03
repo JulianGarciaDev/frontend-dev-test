@@ -49,7 +49,7 @@ export function ProductDetailsPage() {
 
   return (
     <div className="page-container">
-      <Link to="/" className="back-link">
+      <Link to="/" className="back-link" data-testid="back-to-list-link">
         ← Volver al catálogo
       </Link>
 

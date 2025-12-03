@@ -9,6 +9,7 @@ export function SearchBar({ value, onChange, placeholder = "Buscar por marca o m
         value={value}
         onChange={(e) => onChange(e.target.value)}
         className="search-bar__input"
+        data-testid="search-bar-input"
       />
     </div>
   );

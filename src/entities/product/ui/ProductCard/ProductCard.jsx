@@ -4,9 +4,11 @@ import "./ProductCard.css";
 
 export function ProductCard({ product }) {
   return (
+
     <Link 
       to={`/product/${product.id}`}
       className="product-card"
+      data-testid="product-card"
     >
       <div className="product-card__image">
         <img 
@@ -18,7 +20,7 @@ export function ProductCard({ product }) {
       
       <div className="product-card__info">
         <h3 className="product-card__brand">{product.brand}</h3>
-        <p className="product-card__model">{product.model}</p>
+        <p className="product-card__model" data-testid="product-card-model">{product.model}</p>
         <p 
           className={`product-card__price ${!isPriceAvailable(product.price) ? 'product-card__price--unavailable' : ''}`}
         >

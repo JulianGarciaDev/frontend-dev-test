@@ -7,15 +7,15 @@ export function Header() {
   const breadcrumbs = useBreadcrumbs();
 
   return (
-    <header className="header">
+    <header className="header" data-testid="header">
       <div className="header__container">
-        <Link to="/" className="header__logo">
+        <Link to="/" className="header__logo" data-testid="home-link">
           <span>Mobitx Store</span>
         </Link>
 
-        <nav className="header__breadcrumbs" aria-label="breadcrumb">
+        <nav className="header__breadcrumbs" aria-label="breadcrumb" data-testid="breadcrumb">
           {breadcrumbs.map((crumb, index) => (
-            <span key={crumb.path} className="breadcrumb-item">
+            <span key={crumb.path} className="breadcrumb-item" data-testid="breadcrumb-item">
               {index > 0 && <span className="breadcrumb-separator">/</span>}
               {index === breadcrumbs.length - 1 ? (
                 <span className="breadcrumb-current">{crumb.name}</span>

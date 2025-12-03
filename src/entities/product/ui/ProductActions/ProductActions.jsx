@@ -17,7 +17,7 @@ export function ProductActions({ product }) {
   );
 
   return (
-    <div className="product-actions">
+    <div className="product-actions" data-testid="product-actions">
       <h2>Configuración</h2>
       
       {(hasColors || hasStorages) ? (

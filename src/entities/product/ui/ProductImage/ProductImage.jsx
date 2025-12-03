@@ -2,7 +2,7 @@ import "./ProductImage.css";
 
 export function ProductImage({ product }) {
   return (
-    <div className="product-image">
+    <div className="product-image" data-testid="product-image">
       <img 
         src={product.imgUrl} 
         alt={`${product.brand} ${product.model}`}

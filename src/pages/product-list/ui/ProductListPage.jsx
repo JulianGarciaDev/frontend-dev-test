@@ -35,7 +35,7 @@ export function ProductListPage() {
 
   return (
     <div className="page-container">
-      <div className="search-container">
+      <div className="search-container" data-testid="search-container">
         <SearchBar value={query} onChange={setQuery} />
       </div>
       

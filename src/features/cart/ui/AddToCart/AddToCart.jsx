@@ -32,6 +32,7 @@ export function AddToCart({ product, colorCode, storageCode }) {
         onClick={handleAdd}
         className="add-to-cart__button"
         disabled={adding}
+        data-testid="add-to-cart-button"
       >
         {adding ? "Añadiendo..." : "Añadir al carrito"}
       </button>

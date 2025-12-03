@@ -4,14 +4,14 @@ import "./ProductGrid.css";
 export function ProductGrid({ products }) {
   if (!products || products.length === 0) {
     return (
-      <div className="product-grid-empty">
+      <div className="product-grid-empty" data-testid="product-grid-empty">
         <p>No se encontraron productos</p>
       </div>
     );
   }
 
   return (
-    <div className="product-grid">
+    <div className="product-grid" data-testid="product-grid">
       {products.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}

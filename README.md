@@ -174,7 +174,6 @@ Esta solución funciona correctamente para el propósito de la aplicación, aunq
 - `Header.component.test.jsx` - CartBadge + Breadcrumbs + navegación
 
 #### End-to-End Tests importantes
-- Flujo completo: Home → Buscar → Ver detalle → Añadir al carrito
 - Navegación: Logo, breadcrumbs, back/forward del navegador
 - Persistencia: Carrito sobrevive a refresh de página
 - Búsqueda: Filtrado en tiempo real

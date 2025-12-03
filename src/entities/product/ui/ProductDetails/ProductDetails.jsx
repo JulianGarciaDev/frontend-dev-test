@@ -3,7 +3,7 @@ import "./ProductDetails.css";
 
 export function ProductDetails({ product }) {
   return (
-    <div className="product-details">
+    <div className="product-details" data-testid="product-details">
       <div className="product-details__header">
         <span className="product-details__brand">{product.brand}</span>
         <h1 className="product-details__title">{product.model}</h1>
