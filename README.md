@@ -35,7 +35,7 @@ npm run start
 - `npm run start` - Inicia el servidor de desarrollo
 - `npm run build` - Genera la build de producción
 - `npm run test` - Ejecuta los tests con Vitest
-- `npm run test:ui` - Tests con interfaz visual
+- `npm run test:e2e` - Tests End-to-End
 - `npm run lint` - Comprobación de código
 
 ## API
